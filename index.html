@@ -15,8 +15,30 @@
 
 </head>
 <body ng-app="listaTelefonica">
+
     <div ng-controller="listaTelefonicaCtrl" class="pricing-header p-3 pb-md-4 mx-auto text-center">
-        <h2 class="display-4 fw-normal">{{titulo}}</h2>
+        
+        <h2 class="display-4 fw-normal" ng-bind="titulo"></h2>
+        
+        <table class="table">
+            <thead>
+              <tr class="table-dark">
+                <th scope="col">Nome</th>
+                <th scope="col">Telefone</th>
+                <th scope="col">Operadora</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="contato in contatos">
+                <td>{{contato.nome}}</td>
+                <td>{{contato.telefone}}</td>
+                <td></td>
+              </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-outline-primary" type="button">Cadastar</button>
     </div>
+
 </body>
 </html>
