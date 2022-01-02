@@ -23,28 +23,24 @@
         <h2 class="display-4 fw-normal" ng-bind="titulo"></h2>
         
         <table class="table">
-            <thead>
-              <tr class="table-dark">
-                <th scope="col">Nome</th>
-                <th scope="col">Telefone</th>
-                <th scope="col">Operadora</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr ng-repeat="contato in contatos">
-                <td>{{contato.nome}}</td>
-                <td>{{contato.telefone}}</td>
-                <td></td>
-              </tr>
-            </tbody>
+            <tr class="table-dark">
+              <th scope="col">Nome</th>
+              <th scope="col">Telefone</th>
+              <th scope="col">Operadora</th>
+            </tr>
+            <tr ng-repeat="contato in contatos">
+              <td>{{contato.nome}}</td>
+              <td>{{contato.telefone}}</td>
+              <td></td>
+            </tr>
         </table>
 
         <div class="row col-md-12">
           <div class="col-md-4 d-flex justify-content-center">
-            <input class="form-control btn-input-style" type="text" ng-model="nome"/>
+            <input class="form-control btn-input-style" type="text" placeholder="Nome" ng-model="contato.nome"/>
           </div>
           <div class="col-md-4 d-flex justify-content-center">
-            <input class="form-control btn-input-style" type="text" ng-model="telefone"/>
+            <input class="form-control btn-input-style" type="text" placeholder="Telefone" ng-model="contato.telefone"/>
           </div>
           <div class="col-md-4 d-flex justify-content-center">
             <select class="form-select" aria-label="Default select example">
@@ -54,8 +50,9 @@
         </div>
 
         <div class="div-btn">
-          <button class="btn btn-outline-primary" ng-click="adicionarContato()">Adicionar Contato</button>
+          <button class="btn btn-outline-primary" ng-click="adicionarContato(contato)">Adicionar Contato</button>
         </div>
+        {{contato}}
     </div>
 
 </body>
