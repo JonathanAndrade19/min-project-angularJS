@@ -21,14 +21,15 @@
     <div ng-controller="listaTelefonicaCtrl" class="pricing-header p-3 pb-md-4 mx-auto text-center">
         
         <h2 class="display-4 fw-normal" ng-bind="titulo"></h2>
-        
         <table class="table">
             <tr class="table-dark">
+              <th></th>
               <th scope="col">Nome</th>
               <th scope="col">Telefone</th>
               <th scope="col">Operadora</th>
             </tr>
-            <tr ng-repeat="contato in contatos">
+            <tr ng-class="{selecionado: contato.selecionado}" ng-repeat="contato in contatos">
+              <td><input type="checkbox" ng-model="contato.selecionado"/></td>
               <td>{{contato.nome}}</td>
               <td>{{contato.telefone}}</td>
               <td>{{contato.operadora.nome}}</td>
@@ -53,7 +54,6 @@
         <div class="div-btn">
           <button class="btn btn-outline-primary" ng-click="adicionarContato(contato)">Adicionar Contato</button>
         </div>
-        {{contato}}
     </div>
 
 </body>

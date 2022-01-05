@@ -1,3 +1,7 @@
 .div-btn {
     margin-top: 20px;
 }
+.selecionado{
+    background-color: yellow;
+    font-weight: bold;
+}
