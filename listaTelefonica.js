@@ -21,4 +21,10 @@ angular.module('listaTelefonica').controller("listaTelefonicaCtrl", function($sc
         $scope.contatos.push(angular.copy(contato));
         delete $scope.contato;
     };
+
+    $scope.apagarContatos = function (contatos) {
+        $scope.contatos = contatos.filter( function (contato){
+            if (!contato.selecionado) return contato;
+        });
+    };
 });
