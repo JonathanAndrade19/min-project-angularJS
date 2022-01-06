@@ -27,4 +27,11 @@ angular.module('listaTelefonica').controller("listaTelefonicaCtrl", function($sc
             if (!contato.selecionado) return contato;
         });
     };
+
+    $scope.isContatoSelecionado = function () {
+        var isContatoSelecionado = contatos.some(function (contato){
+            return contato.selecionado;
+        });
+        console.log(isContatoSelecionado);
+    }
 });
