@@ -27,12 +27,17 @@
               <th scope="col">Nome</th>
               <th scope="col">Telefone</th>
               <th scope="col">Operadora</th>
+              <th></th>
             </tr>
             <tr ng-class="{selecionado: contato.selecionado}" ng-repeat="contato in contatos">
               <td><input type="checkbox" ng-model="contato.selecionado"/></td>
               <td>{{contato.nome}}</td>
               <td>{{contato.telefone}}</td>
               <td>{{contato.operadora.nome}}</td>
+              <td>
+                <div style="width: 20px; height: 20px; border-radius: 25px;" ng-style="{'background-color': contato.cor}">
+                </div>
+              </td>
             </tr>
         </table>
 

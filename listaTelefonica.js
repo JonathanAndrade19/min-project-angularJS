@@ -3,9 +3,9 @@ angular.module('listaTelefonica').controller("listaTelefonicaCtrl", function($sc
     $scope.titulo = "Lista Telefonica";
 
     $scope.contatos = [
-        {nome: "Jonathan Moreira", telefone: "988770099"},
-        {nome: "Lídia Araújo", telefone: "933224455"},
-        {nome: "Luna Andrade", telefone: "977550011"},
+        {nome: "Jonathan Moreira", telefone: "988770099", cor: "blue"},
+        {nome: "Lídia Araújo", telefone: "933224455", cor: "red"},
+        {nome: "Luna Andrade", telefone: "977550011", cor: "black"},
     ];
 
     $scope.operadoras = [
