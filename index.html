@@ -21,7 +21,7 @@
     <div ng-controller="listaTelefonicaCtrl" class="pricing-header p-3 pb-md-4 mx-auto text-center">
         
         <h2 class="display-4 fw-normal" ng-bind="titulo"></h2>
-        <table class="table">
+        <table class="table" ng-show="contatos.length > 0">
             <tr class="table-dark">
               <th></th>
               <th scope="col">Nome</th>
@@ -58,9 +58,11 @@
 
         <div class="div-btn">
           <button class="btn btn-outline-primary" ng-click="adicionarContato(contato)">Adicionar Contato</button>
-          <button class="btn btn-outline-danger" ng-click="apagarContatos(contatos)" ng-disabled="!isContatoSelecionado(contatos)">Apagar Contatos</button>
+          <button class="btn btn-outline-danger" ng-click="apagarContatos(contatos)" ng-if="isContatoSelecionado(contatos)">Apagar Contatos</button>
         </div>
+        <!-- <p>obs: Para apagar um contato selecione o checkbox</p> -->
     </div>
-
+    <div class="footer" ng-include="'footer.html'">
+    </div>
 </body>
 </html>
